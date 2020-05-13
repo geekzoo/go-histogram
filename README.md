@@ -5,6 +5,10 @@
 
 Usage: `cat mydata.txt | go run histrogram.go`
 
+Build: `go build`
+
+Run: `cat mydata.txt | ./go-histogram`
+
 data example
 
 ```data
