@@ -40,7 +40,7 @@ func main() {
 			fmt.Printf("%c", graf)
 			fmt.Printf(reset)
 		}
-		fmt.Println()
+		fmt.Printf("\n")
 	}
 }
 
