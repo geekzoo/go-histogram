@@ -4,8 +4,10 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/signal"
 	"strconv"
 	"strings"
+	"syscall"
 )
 
 const (
@@ -21,6 +23,7 @@ const (
 )
 
 func main() {
+	cleanclose()
 	stdin := bufio.NewScanner(os.Stdin)
 	for stdin.Scan() {
 
@@ -39,4 +42,17 @@ func main() {
 		}
 		fmt.Println()
 	}
+}
+
+func cleanclose() {
+	catch := make(chan os.Signal)
+	signal.Notify(catch, os.Interrupt, syscall.SIGTERM)
+	go func() {
+		<-catch
+		fmt.Printf("\n\n")
+		fmt.Printf(reset)
+		fmt.Println(reset, "\t [Ctrl+C pressed in Terminal reseting]")
+		fmt.Printf(reset)
+		os.Exit(0)
+	}()
 }
