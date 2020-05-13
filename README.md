@@ -27,3 +27,4 @@ data example
 
 - [x] read data
 - [x] graph data
+- [ ] Add color to >=< to mesure changes by day
