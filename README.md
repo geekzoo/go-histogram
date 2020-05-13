@@ -9,6 +9,8 @@ Build: `go build`
 
 Run: `cat mydata.txt | ./go-histogram`
 
+Other: `for i in {000000..999999}; do echo "${i} $(( $RANDOM % 240 ))"; done | go run histrogram.go`
+
 data example
 
 ```data
