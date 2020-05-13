@@ -22,8 +22,11 @@ const (
 	//graf = '🆇'
 )
 
+var version = "development"
+
 func main() {
 	cleanclose()
+	fmt.Printf("code version: %v\n", version)
 	stdin := bufio.NewScanner(os.Stdin)
 	for stdin.Scan() {
 
