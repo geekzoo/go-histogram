@@ -11,6 +11,8 @@ Run: `cat mydata.txt | ./go-histogram`
 
 Other: `for i in {000000..999999}; do echo "${i} $(( $RANDOM % 240 ))"; done | go run histrogram.go`
 
+![alt text](Screenshot_20200513_190517.png)
+
 data example
 
 ```data
