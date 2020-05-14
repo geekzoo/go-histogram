@@ -28,17 +28,8 @@ var version = "development" //Set by Makefile at build time for production
 
 func main() {
 	cleanclose()
-	FlagVers := flag.Bool("v", false, "")
-	FlagHelp := flag.Bool("h", false, "")
-	flag.Parse()
-	if *FlagVers {
-		fmt.Printf("code version: %v\n", version)
-		os.Exit(0)
-	}
-	if *FlagHelp {
-		fmt.Printf("cat dataFile | ./go-histrogram\n")
-		os.Exit(0)
-	}
+	menu()
+
 	stdin := bufio.NewScanner(os.Stdin)
 	for stdin.Scan() {
 
@@ -74,4 +65,20 @@ func cleanclose() {
 		fmt.Printf(reset)
 		os.Exit(0)
 	}()
+}
+
+func menu() {
+	FlagVers := flag.Bool("v", false, "")
+	FlagHelp := flag.Bool("h", false, "")
+	flag.Parse()
+	if *FlagVers {
+		fmt.Printf("code version: %v\n", version)
+		os.Exit(0)
+	}
+	if *FlagHelp {
+		fmt.Printf("Usage: cat dataFile | ./go-histrogram\n")
+		fmt.Printf("-h Help:\n")
+		fmt.Printf("-v Version:\n")
+		os.Exit(0)
+	}
 }
