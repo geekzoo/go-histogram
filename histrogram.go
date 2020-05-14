@@ -25,7 +25,7 @@ const (
 )
 
 var version = "development" //Set by Makefile at build time for production
-
+// histogram
 func main() {
 	cleanclose()
 	menu()
