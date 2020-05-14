@@ -44,7 +44,7 @@ func main() {
 
 		data := stdin.Text()
 		if data == "" {
-			log.Println(red + "LINE: NULL" + reset)
+			log.Println(yellow + "LINE: NULL" + reset)
 			os.Exit(1)
 		}
 		out := strings.Fields(data)
