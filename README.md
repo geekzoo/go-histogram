@@ -1,15 +1,15 @@
 # go-histogram
 
-1. Construct histrogram of time seriese data using golang.
+1. Construct histogram of time seriese data using golang.
 1. Graph increase and decreased values or likeness.
 
-Usage: `cat mydata.txt | go run histrogram.go`
+Usage: `cat mydata.txt | go run histogram.go`
 
 Build: `go build`
 
 Run: `cat mydata.txt | ./go-histogram`
 
-Other: `for i in {000000..999999}; do echo "${i} $(( $RANDOM % 240 ))"; done | go run histrogram.go`
+Other: `for i in {000000..999999}; do echo "${i} $(( $RANDOM % 240 ))"; done | go run histogram.go`
 
 ![alt text](Screenshot_20200513_190517.png)
 
