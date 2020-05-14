@@ -29,7 +29,7 @@ var version = "development" //Set by Makefile at build time for production
 func main() {
 	cleanclose()
 	menu()
-	go buildhist()
+	buildhist()
 	//	stdin := bufio.NewScanner(os.Stdin)
 	//	for stdin.Scan() {
 	//
