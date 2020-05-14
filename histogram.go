@@ -26,32 +26,11 @@ const (
 
 var version = "development" //Set by Makefile at build time for production
 // histogram
+
 func main() {
 	cleanclose()
 	menu()
 	buildhist()
-	//	stdin := bufio.NewScanner(os.Stdin)
-	//	for stdin.Scan() {
-	//
-	//		data := stdin.Text()
-	//		if data == "" {
-	//			log.Println(yellow + "LINE: NULL" + reset)
-	//			os.Exit(1)
-	//		}
-	//		out := strings.Fields(data)
-	//		counts, _ := strconv.Atoi(out[1])
-	//
-	//		fmt.Printf(blue)
-	//		fmt.Printf("%v [%4v]", out[0], out[1])
-	//		fmt.Printf(reset)
-	//
-	//		for row := 1; row <= counts; row++ {
-	//			fmt.Printf(red)
-	//			fmt.Printf("%c", graf)
-	//			fmt.Printf(reset)
-	//		}
-	//		fmt.Printf("\n")
-	//	}
 }
 
 func cleanclose() {
