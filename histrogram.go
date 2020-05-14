@@ -2,7 +2,9 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
+	"log"
 	"os"
 	"os/signal"
 	"strconv"
@@ -22,15 +24,29 @@ const (
 	//graf = '🆇'
 )
 
-var version = "development"
+var version = "development" //Set by Makefile at build time for production
 
 func main() {
 	cleanclose()
-	fmt.Printf("code version: %v\n", version)
+	FlagVers := flag.Bool("v", false, "")
+	FlagHelp := flag.Bool("h", false, "")
+	flag.Parse()
+	if *FlagVers {
+		fmt.Printf("code version: %v\n", version)
+		os.Exit(0)
+	}
+	if *FlagHelp {
+		fmt.Printf("cat dataFile | ./go-histrogram\n")
+		os.Exit(0)
+	}
 	stdin := bufio.NewScanner(os.Stdin)
 	for stdin.Scan() {
 
 		data := stdin.Text()
+		if data == "" {
+			log.Println(red + "LINE: NULL" + reset)
+			os.Exit(1)
+		}
 		out := strings.Fields(data)
 		counts, _ := strconv.Atoi(out[1])
 
