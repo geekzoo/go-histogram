@@ -21,7 +21,7 @@ const (
 	reset  = "\033[0m"
 
 	graf = '∎'
-	//graf = '🆇'
+	//graf = '>'
 )
 
 var version = "development" //Set by Makefile at build time for production
@@ -55,7 +55,7 @@ func menu() {
 		os.Exit(0)
 	}
 	if *FlagHelp {
-		fmt.Printf("Usage: cat dataFile | ./go-histrogram\n")
+		fmt.Printf("Usage: cat mydata.txt | ./go-histrogram\n")
 		fmt.Printf("-h Help:\n")
 		fmt.Printf("-v Version:\n")
 		os.Exit(0)
