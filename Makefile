@@ -11,6 +11,9 @@ docker_build: version
 	docker build -t dc.geekzoo.io/go-histogram:${COMMIT} .
 docker_run: version
 	docker run -it --rm dc.geekzoo.io/go-histogram:${COMMIT}
+test: version
+	go run histogram.go -v
+	printf "abc 123 \n def 32 \n" | go run histogram.go
 clean: version
 	rm ${PWD}/go-histogram
 	docker rmi dc.geekzoo.io/go-histogram:${COMMIT}
