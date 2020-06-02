@@ -56,8 +56,8 @@ func menu() {
 	}
 	if *FlagHelp {
 		fmt.Printf("Usage: cat mydata.txt | ./go-histrogram\n")
-		fmt.Printf("-h Help:\n")
 		fmt.Printf("-v Version:\n")
+		fmt.Printf("-h Help:\n")
 		os.Exit(0)
 	}
 }
