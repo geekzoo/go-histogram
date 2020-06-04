@@ -1,4 +1,4 @@
-all: version buildbot docker_build
+all: version buildbot docker_build test
 	#go build -ldflags "-X main.version=${COMMIT}"
 version:
 	 $(eval COMMIT = $(shell git rev-parse HEAD))
@@ -9,7 +9,7 @@ dev:
 docker_build: version
 	go build -ldflags "-X main.version=${COMMIT}"
 	docker build -t dc.geekzoo.io/go-histogram:${COMMIT} .
-docker_run: version
+docker_run: version docker_build
 	docker run -it --rm dc.geekzoo.io/go-histogram:${COMMIT}
 test: version
 	go run histogram.go -v
