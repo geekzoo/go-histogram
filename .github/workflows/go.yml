@@ -23,6 +23,6 @@ jobs:
 
     - name: Test
       run: go test -v ./...
-      
+
     - name: Bin test
-      run: go run -v ./...
+      run: cat mydata.txt |go run .
